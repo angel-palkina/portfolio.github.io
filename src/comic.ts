@@ -14,8 +14,6 @@ interface ComicResponse {
     day: string;
   }
 
-  
-
 async function main() {
     // Получение ID через fetch
     const responseId = await fetch(new URL(`https://fwd.innopolis.university/api/hw2?email=s.palkina@innopolis.university`));
