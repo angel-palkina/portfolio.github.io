@@ -1,8 +1,6 @@
 import { formatDistanceToNow } from "date-fns";
+main();
 
-document.addEventListener('DOMContentLoaded', () => {
-    main();
-});
 
 type Comic = {
     month: string;

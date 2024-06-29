@@ -1,13 +1,15 @@
 import { nodeResolve } from '@rollup/plugin-node-resolve';
 import typescript from '@rollup/plugin-typescript';
+import terser from "@rollup/plugin-terser";
 
 export default {
-    input: 'src/index.js',
+    input: ['src/comic.ts'],
+
     output: {
-      dir: 'output',
+      dir: 'dist/bundle.js',
       format: 'cjs'
     },
-    plugins: [typescript(), nodeResolve()],
+    plugins: [typescript(),terser(), nodeResolve({browser: true})],
 };
 
 
