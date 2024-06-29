@@ -49,7 +49,7 @@ async function main() {
     );
 
     const time = document.createElement("time"); 
-    time.textContent = "Uploaded: " + `${formatDistanceToNow(date)} ago`; 
+    time.textContent = "Uploaded " + `${formatDistanceToNow(date)} ago`; 
 
 
     comicPicture.appendChild(time);// добавление элемента по Id в документ
