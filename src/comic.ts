@@ -1,5 +1,19 @@
 import { formatDistanceToNow } from "date-fns";
 
+interface ComicResponse {
+    month: string;
+    num: number;
+    link: string;
+    year: string;
+    news: string;
+    safe_title: string;
+    transcript: string;
+    alt: string;
+    img: string;
+    title: string;
+    day: string;
+  }
+
 async function main() {
     // Получение ID через fetch
     const responseId = await fetch(new URL(`https://fwd.innopolis.university/api/hw2?email=s.palkina@innopolis.university`));
@@ -11,7 +25,7 @@ async function main() {
 
     // Получение информации о комиксе
     const responseComic = await fetch(url);
-    const info = await responseComic.json();
+    const info: ComicResponse = await responseComic.json(); 
 
     let comicPicture = document.getElementById("comic-picture") as HTMLElement;
 
@@ -25,7 +39,7 @@ async function main() {
     const title = document.createElement("h2");
     title.textContent = info.safe_title;
     comicPicture.appendChild(title);// добавление элемента по Id в документ
-
+    
     // создание даты
     const date = new Date(
         Date.UTC(
@@ -34,15 +48,17 @@ async function main() {
         )
     );
 
-    const time = document.createElement("time");
-    time.innerHTML = date.toLocaleDateString(
-        "en",
-        { 
-            month: "long",
-            year: "numeric"
-        }
-    );
+    const time = document.createElement("time"); 
+    time.textContent = "Uploaded: " + `${formatDistanceToNow(date)} ago`; 
+
+
     comicPicture.appendChild(time);// добавление элемента по Id в документ
 }
 
 main();
+
+
+
+
+
+
