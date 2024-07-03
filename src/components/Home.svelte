@@ -14,8 +14,14 @@
 
 <style>
 	body{
-	box-sizing: border-box;
-    margin: 0;
+		position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url(./img/fon.jfif);
+        background-size: cover;
+        background-position: center;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 	}
 	.header {

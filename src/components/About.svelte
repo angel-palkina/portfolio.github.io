@@ -1,18 +1,41 @@
 <script lang="ts">
 	import Menu from './Menu.svelte';
+
+    import vk from "./img/footer/vk.png";
+    import tg from "./img/footer/tg.png";
+    import git from "./img/footer/git.png";
+    import mail from "./img/footer/mail.png";
     import me from "./img/about/photo.jpg";
+    
 
 </script>
 <body>
     <div class="cont">
+        <!-- svelte-ignore a11y-img-redundant-alt -->
         <img class="img-me" src={me} alt="My photo">
+    
     <div class="text-about-me"><ul class="bio">
         <li class="spis">Place of study: Innopolis University</li>
         <li class="spis">Hometown: Perm</li>
         <li class="spis">Date of Birth: 29.03.2005</li>
         <li class="spis">Secondary general education: Lyceum 10 Perm</li>
+    </ul>
+        <div class="footer-icons">
+            <a href="https://vk.com/angel.sofia" id="vk-link">
+                <img class="footer-image" src={vk} alt="vk">
+            </a>
+            <a href="https://github.com/angel-palkina" id="gh-link">
+                <img class="footer-image" src={git} alt="git">
+            </a>
+            <a href="https://t.me/angel_sofia2005" id="tg-link">
+                <img class="footer-image" src={tg} alt="tg">
+            </a>
+            <a href="mailto:s.palkina@innopolis.university" class="footer-buttom-mail" id="email">
+                <img class="footer-image" src={mail} alt="mail">
+            </a>
+        </div>
 
-    </ul></div>
+    </div>
     </div>
      
 </body>
@@ -20,7 +43,7 @@
 <style>
 
 body {
-    padding-top: 80px;
+        padding-top: 80px;
         position: fixed;
         top: 0;
         left: 0;
@@ -53,6 +76,20 @@ body {
 }   
 .spis{
     margin-bottom: 30px;
+    font-weight: 400;
+}
+.footer-icons {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    margin-left: 30px;
+}
+.footer-image {
+    max-width: 40px;
+    max-height: 40px;
+}
+.footer-icons > *{
+    margin-left: 50px;
 }
 
 </style>
